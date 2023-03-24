@@ -14,5 +14,14 @@ public class ProductRepository {
         for (Product product: menu) {
             System.out.printf("%d) %s(%d원) ", product.getId(), product.getName(), product.getPrice());
         }
+        System.out.println();
+    }
+
+    public void printMenu(String id) {
+        for (Product product : menu) {
+            if (product.getId() == Integer.parseInt(id)) {
+                System.out.printf("%d) %s(%d원) 를 주문합니다.\n", product.getId(), product.getName(), product.getPrice());
+            }
+        }
     }
 }

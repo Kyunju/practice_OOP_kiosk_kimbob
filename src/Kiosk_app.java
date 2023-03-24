@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Kiosk_app {
 
     public void init() {
@@ -7,6 +9,12 @@ public class Kiosk_app {
 
         System.out.println("[안내]원하시는 메뉴의 번호를 입력하여 주세요.");
         productRepository.printMenu();
+        Scanner input = new Scanner(System.in);
+        String productId = input.nextLine(); // 메뉴의 번호 입력 받기
+        productRepository.printMenu(productId); // 메뉴의 번호로 레파지토리에서 해당 상품 출력
+
+        System.out.println("[안내] 원하시는 수량을 입력해주세요");
+
 
     }
 }
