@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 public class ProductRepository {
     private Product[] menu = new Product[]{
             new Product(1,"김밥", 1000, 99),
@@ -17,11 +19,23 @@ public class ProductRepository {
         System.out.println();
     }
 
-    public void printMenu(String id) {
+    public boolean printMenu(String id) {
+        if (findMenu(id) == null) return false;
         for (Product product : menu) {
             if (product.getId() == Integer.parseInt(id)) {
                 System.out.printf("%d) %s(%d원) 를 주문합니다.\n", product.getId(), product.getName(), product.getPrice());
+                break;
             }
         }
+        return true;
+    }
+
+    private Product findMenu(String id) {
+        for (Product product : menu) {
+            if (product.getId() == Integer.parseInt(id)) {
+                return product;
+            }
+        }
+        return null;
     }
 }
