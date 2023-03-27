@@ -21,6 +21,9 @@ public class Kiosk_app {
             }
 
             System.out.println("[안내] 원하시는 수량을 입력해주세요");
+
+            System.out.println("[안내] 주문 종료 : 0, 추가 주문 : 9");
+            if (input.nextLine().equals("0")) running = false;
         }
 
 
