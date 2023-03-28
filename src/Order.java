@@ -7,7 +7,7 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public Product getProduct() {/
+    public Product getProduct() {
         return product;
     }
 

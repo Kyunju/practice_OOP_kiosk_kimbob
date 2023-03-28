@@ -3,8 +3,8 @@ import org.w3c.dom.ls.LSOutput;
 public class ProductRepository {
     private Product[] menu = new Product[]{
             new Product(1,"김밥", 1000, 99),
-            new Product(2, "계란 김밥", 1500, 99),
-            new Product(3, "충무 김밥", 1000, 99),
+            new Product(2, "계란김밥", 1500, 99),
+            new Product(3, "충무김밥", 1000, 99),
             new Product(4, "떡볶이", 2000, 99)
     };
 
@@ -30,7 +30,7 @@ public class ProductRepository {
         return true;
     }
 
-    private Product findMenu(String id) {
+    public Product findMenu(String id) {
         for (Product product : menu) {
             if (product.getId() == Integer.parseInt(id)) {
                 return product;
